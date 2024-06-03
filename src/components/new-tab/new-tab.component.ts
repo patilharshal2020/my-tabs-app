@@ -30,8 +30,7 @@ export class NewTabComponent implements OnInit {
   }
 
   onSubmit(){
-    this.userForm.valueChanges.subscribe(value => {
+    const value = this.userForm.value;
       this.formDataChange.emit(value);
-    });
   }
 }
