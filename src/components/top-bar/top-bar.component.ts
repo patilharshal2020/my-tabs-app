@@ -11,9 +11,4 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent {
-  @Output() newTab = new EventEmitter<void>();
-
-  createNewTab() {
-    this.newTab.emit();
-  }
 }
