@@ -1,0 +1,15 @@
+<app-top-bar></app-top-bar>
+<div class="add-btn">
+  <button mat-raised-button color="primary" (click)="createNewTab()">Add Tab</button>
+</div>
+<mat-tab-group [(selectedIndex)]="selectedTabIndex">
+  <mat-tab *ngFor="let tab of tabs; let i = index">
+    <ng-template mat-tab-label>
+      <span>Tab {{i + 1}}</span>
+      <button mat-icon-button (click)="closeTab(i, $event)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </ng-template>
+    <app-new-tab (formDataChange)="updateTabData(i, $event)"></app-new-tab>
+  </mat-tab>
+</mat-tab-group>
